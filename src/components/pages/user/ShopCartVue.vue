@@ -10,8 +10,8 @@
     /* Rretrieve the current route */
     const route = useRoute();
 
-    if(route.params.productId !== undefined) {
-        console.log(route.params.productId);
+    if(route.params.name !== undefined) {
+        console.log(route.params.name);
     }
 </script>
 
