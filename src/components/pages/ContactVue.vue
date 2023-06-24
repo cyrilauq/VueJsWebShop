@@ -1,18 +1,11 @@
 <template>
-    <div>
-
-    </div>
+    <section>
+        
+    </section>
 </template>
 
 <script setup lang="ts">
-    import { useRoute } from 'vue-router'
 
-    /* Rretrieve the current route */
-    const route = useRoute();
-
-    if(route.params.productId !== undefined) {
-        console.log(route.params.productId);
-    }
 </script>
 
 <style scoped>
