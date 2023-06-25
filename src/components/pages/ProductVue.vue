@@ -7,7 +7,7 @@
         </ul>
         <div>
             <div>
-                <img src="my-product.jpg" alt="An amazing product" />
+                <img :src="currentProduct?.imagePath" alt="An amazing product" />
                 <ul id="item-action">
                     <li>Add whishlist</li>
                     <li>Share</li>
@@ -32,24 +32,46 @@
                     </tr>
                 </table>
             </div>
-            <div>
+            <div id="buy-section">
                 <div>
                     <p>Price</p>
                     <p>59.99€</p>
                 </div>
-                <button>
-                    Buy it
+                <button class="payement-btn">
+                    Add to the cart
+                </button>
+                <button class="payement-btn">
+                    Buy it now
                 </button>
             </div>
         </div>
+        <ProductListVue />
     </section>
 </template>
 
 <script setup lang="ts">
+    import ProductListVue from '@/components/pages/product/ProductListVue.vue';
 
+    import { Product } from '@/modules/Product'
+
+    const currentProduct = new Product({
+        name: "Product xxx",
+        description: "A crazy product",
+        id: 1,
+        imagePath: '/images/not-found-image.jpg',
+        price: 59.99
+    })
 </script>
 
 <style scoped>
+    .payement-btn {
+        min-width: 120px;
+        width: 50%;
+    }
+    #buy-section {
+        display: flex;
+        flex-direction: column;
+    }
     .fil-ariane, #item-action {
         list-style-type: none;
         display: flex;
@@ -68,7 +90,11 @@
         flex-direction: row;
         text-align: left;
     }
+    ul + div > div {
+        align-items: center;
+        width: 28%;
+    }
     ul + div > div:first-child {
-        width: 50%;
+        width: 40%;
     }
 </style>
