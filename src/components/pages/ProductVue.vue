@@ -45,7 +45,12 @@
                 </button>
             </div>
         </div>
-        <ProductListVue />
+        <section>
+            <h4 class="section-title">Might interress you</h4>    
+            <ProductListVue class="product-item-list" />
+            <h4 class="section-title">Last seen</h4>    
+            <ProductListVue class="product-item-list" />
+        </section>
     </section>
 </template>
 
@@ -64,6 +69,11 @@
 </script>
 
 <style scoped>
+    .section-title {
+        margin-left: auto;
+        margin-right: auto;
+        width: var(--list-product-items-vue-width);
+    }
     .payement-btn {
         min-width: 120px;
         width: 50%;
